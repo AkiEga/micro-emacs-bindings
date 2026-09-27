@@ -188,6 +188,7 @@ function init()
     config.MakeCommand("emacs-keyboard-quit", keyboard_quit, config.NoComplete)
 
     config.TryBindKey("CtrlSpace", "lua:emacsbindings.set_mark", true)
+    config.TryBindKey("Ctrl-@", "lua:emacsbindings.set_mark", true)
     config.TryBindKey("Ctrl-w", "lua:emacsbindings.kill_region", true)
     config.TryBindKey("Alt-w", "lua:emacsbindings.copy_region", true)
     config.TryBindKey("Ctrl-y", "lua:emacsbindings.yank", true)

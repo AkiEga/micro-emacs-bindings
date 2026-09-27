@@ -7,6 +7,7 @@ This plugin provides a small Emacs-style editing layer for micro.
 | Key | Action |
 | --- | --- |
 | `Ctrl-Space` | Set/activate the mark (press again to deactivate) |
+| `Ctrl-@` | Set/activate the mark (fallback for terminals that intercept `Ctrl-Space`) |
 | `Ctrl-g` | Deactivate the mark (keyboard-quit) |
 | `Ctrl-x Ctrl-x` | Exchange point and mark |
 | `Ctrl-w` | Cut the region between point and mark |
