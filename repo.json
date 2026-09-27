@@ -1,15 +1,15 @@
-{
-  "Name": "emacs-bindings",
+[{
+  "Name": "emacsbindings",
   "Description": "Emacs-style mark, region, kill-region, and kill-line bindings for micro",
   "Tags": ["emacs", "keybindings", "mark", "region"],
   "Website": "https://github.com/akiega/micro-emacs-bindings",
   "Versions": [
     {
-      "Version": "0.1.0",
-      "Url": "https://github.com/akiega/micro-emacs-bindings/archive/v0.1.0.zip",
+      "Version": "0.2.0",
+      "Url": "https://github.com/akiega/micro-emacs-bindings/archive/v0.2.0.zip",
       "Require": {
         "micro": ">=2.0.15"
       }
     }
   ]
-}
+}]
