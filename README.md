@@ -26,6 +26,7 @@ micro で次のコマンドを実行します。
 | --- | --- |
 | `Ctrl-Space` | 現在位置に mark を設定します。同じ位置でもう一度押すと解除します |
 | `Ctrl-@` | `Ctrl-Space` と同様に mark を設定します |
+| `Ctrl-x m` | mark 設定の代替キー。`Ctrl-x` の後、Ctrl を離して `m` を押します |
 | `Ctrl-g` | mark と選択範囲を解除します (`keyboard-quit`) |
 | `Ctrl-x Ctrl-x` | point（カーソル位置）と mark を入れ替えます |
 | `Ctrl-w` | point と mark の間を切り取ります (`kill-region`) |
@@ -41,6 +42,14 @@ micro で次のコマンドを実行します。
 4. `Ctrl-y` で貼り付けます。
 
 mark の設定後、プラグインの移動コマンドを使用すると mark から現在位置までの選択範囲が更新されます。
+
+### mark を設定できない場合
+
+`Ctrl-Space` と `Ctrl-@` は、端末や Windows の入力処理によって micro に届かない場合があります。`Ctrl-x m` を押し、画面下部に `Mark set` と出ることを確認してください。その後 `Ctrl-f` で移動し、`Ctrl-w` で切り取れます。既に `Ctrl-x m` にユーザー設定がある場合は、その設定が優先されます。
+
+## テスト
+
+micro を利用できる PowerShell で `./tests/run.ps1` を実行します。一時設定と保存しないバッファで mark・選択・切り取り・解除を検証します。`./tests/run.ps1 -Keys` では、追加で `Ctrl-x m` を押してキー経由の動作を検証できます。
 
 ## 現在の制限
 
