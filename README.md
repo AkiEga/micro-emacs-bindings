@@ -45,11 +45,21 @@ mark の設定後、プラグインの移動コマンドを使用すると mark 
 
 ### mark を設定できない場合
 
-`Ctrl-Space` と `Ctrl-@` は、端末や Windows の入力処理によって micro に届かない場合があります。`Ctrl-x m` を押し、画面下部に `Mark set` と出ることを確認してください。その後 `Ctrl-f` で移動し、`Ctrl-w` で切り取れます。既に `Ctrl-x m` にユーザー設定がある場合は、その設定が優先されます。
+Windows 版 micro 2.0.15 が使用する tcell v2.0.13 では、NUL 形式の `Ctrl-Space` が入力処理で破棄されることを確認しています。`Ctrl-@` も同じ問題に遭遇する場合があります。
+
+`Ctrl-x` を押してから Ctrl を離して `m` を押し、画面下部の `Mark set` を確認してください。その後 `Ctrl-f` で移動し、`Ctrl-w` で切り取れます。既存の `Ctrl-x m` のユーザー設定は上書きしません。
+
+原因と検証結果は [Windows の Ctrl-Space 調査記録](docs/windows-ctrl-space.md) を参照してください。
 
 ## テスト
 
-micro を利用できる PowerShell で `./tests/run.ps1` を実行します。一時設定と保存しないバッファで mark・選択・切り取り・解除を検証します。`./tests/run.ps1 -Keys` では、追加で `Ctrl-x m` を押してキー経由の動作を検証できます。
+micro を利用できる PowerShell で、リポジトリ直下から実行します。
+
+```powershell
+./tests/run.ps1
+```
+
+一時設定と未保存バッファで mark・選択・切り取り・解除を検証します。`./tests/run.ps1 -Keys` では、追加で `Ctrl-x m` を押してキー経由の動作を検証できます。これらは `Ctrl-Space` の入力処理そのものを検証するテストではありません。
 
 ## 現在の制限
 

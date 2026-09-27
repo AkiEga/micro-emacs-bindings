@@ -21,8 +21,11 @@ While the mark is active, movement commands (`Ctrl-f/b/n/p`, `Alt-f/b`,
 transient-mark-mode.
 
 If neither `Ctrl-Space` nor `Ctrl-@` displays `Mark set`, try `Ctrl-x m`.
-Terminal or Windows input handling may prevent those keys from reaching micro.
+On Windows, micro 2.0.15 with tcell v2.0.13 was verified to discard NUL-form
+`Ctrl-Space` input before it reaches the plugin. `Ctrl-@` may share this limitation.
 An existing user binding for `Ctrl-x m` takes precedence over this fallback.
+See the [Windows Ctrl-Space investigation](../docs/windows-ctrl-space.md) for
+the reproduction results and scope of the diagnosis.
 
 The mark is currently process-global and the plugin uses micro's clipboard for
 cut and paste operations. Kill-ring merging and kill-at-end-of-line behavior
