@@ -25,6 +25,7 @@ micro で次のコマンドを実行します。
 | キー | 動作 |
 | --- | --- |
 | `Ctrl-Space` | 現在位置に mark を設定します。同じ位置でもう一度押すと解除します |
+| `Ctrl-@` | `Ctrl-Space` と同様に mark を設定します |
 | `Ctrl-g` | mark と選択範囲を解除します (`keyboard-quit`) |
 | `Ctrl-x Ctrl-x` | point（カーソル位置）と mark を入れ替えます |
 | `Ctrl-w` | point と mark の間を切り取ります (`kill-region`) |
